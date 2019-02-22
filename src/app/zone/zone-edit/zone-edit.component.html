@@ -1,0 +1,21 @@
+<h1>{{ title }}</h1>
+
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="form" novalidate>
+
+      <div class="form-group">
+        <label class="form-control-label">Área</label>
+        <input type="text" class="form-control" formControlName="name" required />
+        <div *ngIf="form.controls.name.invalid && (form.controls.name.dirty || form.controls.name.touched)" class="text-danger">
+          <div *ngIf="form.controls.name.errors.required">
+            O campo é obrigatório
+          </div>
+        </div>
+      </div>
+
+      <button class="btn btn-primary" type="button" (click)="onSubmit()" [disabled]="!form.valid">Salvar</button>
+    </form>
+  </div>
+</div>
+

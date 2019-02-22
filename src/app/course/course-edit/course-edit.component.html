@@ -1,0 +1,36 @@
+<h1>{{ title }}</h1>
+
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="form" novalidate>
+
+      <div class="form-group">
+        <label>Áreas</label>
+        <select class="form-control" formControlName="zoneKey" (change)="setZoneSelected($event.target.selectedOptions)">
+          <option value="">- Escolha -</option>
+          <option *ngFor="let zone of zones | async" [value]="zone.key">{{ zone.data.name }}</option>
+        </select>
+        <div *ngIf="form.controls.zoneKey.invalid && (form.controls.zoneKey.dirty || form.controls.zoneKey.touched)"
+          class="text-danger">
+          <div *ngIf="form.controls.zoneKey.errors.required">
+            O campo é obrigatório
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-control-label">Curso</label>
+        <input type="text" class="form-control" formControlName="name" required />
+        <div *ngIf="form.controls.name.invalid && (form.controls.name.dirty || form.controls.name.touched)" class="text-danger">
+          <div *ngIf="form.controls.name.errors.required">
+            O campo é obrigatório
+          </div>
+        </div>
+      </div>
+
+
+      <button class="btn btn-primary" type="button" (click)="onSubmit()" [disabled]="!form.valid">Salvar</button>
+    </form>
+  </div>
+</div>
+

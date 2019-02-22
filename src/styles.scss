@@ -1,0 +1,77 @@
+$theme-colors: (
+    "primary": #1D3557,
+    "secondary": #457B9D,
+    "danger": #E63946,
+    "light": #F1FAEE,
+    "dark": #0F0F0F,
+    "success": #00a65a,
+    "warning": #f39c12
+  );
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import '../node_modules/angular2-toaster/toaster';
+
+body {
+  padding-top: 3.5rem;
+}
+
+h1 {
+  margin-bottom: 20px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid #eee;
+}
+
+.sidebar {
+  position: fixed;
+  top: 51px;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-right: 1px solid #eee;
+}
+
+.sidebar {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.sidebar .nav {
+  margin-bottom: 20px;
+}
+
+.sidebar .nav-item {
+  width: 100%;
+}
+
+.sidebar .nav-item + .nav-item {
+  margin-left: 0;
+}
+
+.sidebar .nav-link {
+  border-radius: 0;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+/** Validation */
+.ng-valid:not(form) {
+  border-left: 5px solid #42A948;
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #dc3545;
+}
+
+/** Grids */
+.action-column {
+  width: 50px;
+}
+
+.id-column {
+  width: 250px;
+}

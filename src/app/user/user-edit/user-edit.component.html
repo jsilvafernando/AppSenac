@@ -1,0 +1,61 @@
+<h1>{{ title }}</h1>
+
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="form" novalidate>
+
+      <div class="form-group">
+        <label class="form-control-label">Nome</label>
+        <input type="text" class="form-control" formControlName="name" required />
+        <div *ngIf="form.controls.name.invalid && (form.controls.name.dirty || form.controls.name.touched)" class="text-danger">
+          <div *ngIf="form.controls.name.errors.required">
+            O campo é obrigatório
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-control-label">E-mail</label>
+        <input type="email" class="form-control" formControlName="email" required />
+        <div *ngIf="form.controls.email.invalid && (form.controls.email.dirty || form.controls.email.touched)" class="text-danger">
+          <div *ngIf="form.controls.email.errors.required">
+            O campo é obrigatório
+          </div>
+          <div *ngIf="form.controls.email.errors.email">
+            O e-mail é invalido
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Áreas</label>
+        <input type="text" readonly="true" class="form-control" formControlName="zoneuser" />
+      </div>
+      <div class="form-group">
+        <label>Cursos</label>
+        <input type="text" readonly="true" class="form-control" formControlName="courseuser" />
+      </div>
+      <div class="form-group">
+        <label>Turmas</label>
+        <select class="form-control" formControlName="classekey" (change)="setClasseSelected($event.target.selectedOptions)">
+          <option value="">- Selecione -</option>
+          <option *ngFor="let classe of classes | async" [value]="classe.key">{{ classe.data.name }}</option>
+        </select>
+        <div *ngIf="form.controls.classekey.invalid && (form.controls.classekey.dirty || form.controls.classekey.touched)"
+          class="text-danger">
+          <div *ngIf="form.controls.classekey.errors.required">
+            O campo é obrigatório
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-control-label">Validado</label>
+        <select formControlName="verified">
+            <option value="true">Sim</option>
+            <option value="false">Não</option>
+        </select>
+        </div>
+
+      <button class="btn btn-primary" type="button" (click)="onSubmit()" [disabled]="!form.valid">Salvar</button>
+    </form>
+  </div>
+</div>
+

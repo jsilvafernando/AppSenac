@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
+  <a class="navbar-brand" href="#"><img src="../assets/imgs/icon-50x50-senac.png"><small>Senac Campinas</small></a>
+  <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <app-side-menu *ngIf="userAuthenticated"></app-side-menu>
+    <main class="col-12 pt-5 pb-5" role="main">
+      <div [ngClass]="{ 'col-sm-9 col-md-10 ml-sm-auto': userAuthenticated, 'mx-auto col-sm-12 col-md-4': !userAuthenticated }">
+        <router-outlet></router-outlet>
+        <toaster-container></toaster-container>
+      </div>
+    </main>
+  </div>
+</div>
