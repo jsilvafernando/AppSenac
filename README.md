@@ -46,4 +46,24 @@ Siga o passo-a-passo da video aula 12 do canal Balta.io no youtube
 
 `` https://www.youtube.com/watch?v=ftfvd2jDAn4&list=PLHlHvK2lnJnccBL9grcoRxv8CsLa9Q_4q&index=12 `` 
 
+## Arquivo necessário para rodar
+Dentro da pasta `src` do projeto colocar o arquivo ``firebase-config.ts`` com a configuração do seu projeto no Firebase.
 
+```
+export const config = {
+
+  apiKey: "",
+  
+  authDomain: "",
+  
+  databaseURL: "",
+  
+  projectId: "",
+  
+  storageBucket: "",
+  
+  messagingSenderId: ""
+  
+  }   
+  
+```
