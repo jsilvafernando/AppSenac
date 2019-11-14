@@ -1,4 +1,4 @@
-# AppSenac Admin - Aréa Administrativa do App Ideia Senac
+# AppSenac Admin - Aréa Administrativa do App Ideia Viva
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.0.
 
@@ -27,7 +27,9 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 # AppSenac
-Possui a área Administrativa do App Ideia Senac, para cadastrar Áreas, Cursos e pode ser hospedado no próprio portal do ``Firebase`` utilizando a opção do ``Firebase Hosting``
+Possui a área Administrativa do App Ideia Viva, para cadastrar Avisos, Agenda, Áreas, Cursos e Validar usuários (Alunos) 
+
+Pode ser hospedado no próprio portal do ``Firebase`` utilizando a opção do ``Firebase Hosting``
 
 ## Apoio para hospedagem
 Siga o passo-a-passo da video aula 12 do canal Balta.io no youtube
